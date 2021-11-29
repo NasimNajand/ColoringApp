@@ -41,7 +41,7 @@ public class PaintView extends View {
         }
         for (int i = 0; i < bitmap.getWidth(); i++) {
             for (int j = 0; j < bitmap.getHeight(); j++) {
-                int alpha = 255 - bitmap.getPixel(i, j) >> 16 & 0xff;
+                int alpha = 255 - brightness(bitmap.getPixel(i, j));
                 if (alpha > 150){
                     bitmap.setPixel(i,j,Color.BLACK);
                 }else {
